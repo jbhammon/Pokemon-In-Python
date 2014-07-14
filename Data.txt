@@ -1,0 +1,15 @@
+Gardevoir
+20
+115
+Psychic 12
+Agility 20
+Flamethrower 15
+Calm Mind 25
+
+Jolteon
+20
+195
+Agility 20
+Thunderbolt 15
+Slash 30
+Double-Edge 20
