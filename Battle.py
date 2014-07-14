@@ -1,8 +1,9 @@
 import Creature
 import Sequence
 
-import random
-
+###################################################
+## This a comment for learning how commits work! ##
+###################################################
 def pokemonBuilder(source):
 	pokemon = Creature.Pokemon()
 	
