@@ -86,11 +86,33 @@ def movePrint(pokemon):
 	cell2 = "|" + pokemon.moves[2].name + " " + str(pokemon.moves[2].remainingPP) + "/" + str(pokemon.moves[2].totalPP) + " |"
 	cell3 = " " + pokemon.moves[3].name + " " + str(pokemon.moves[3].remainingPP) + "/" + str(pokemon.moves[3].totalPP) + " |"
 
+	row1 = len(cell0) + len(cell1)
+	row2 = len(cell2) + len(cell3)
+	longest = 0
+	row1Print = ""
+	row2Print = ""
+	if row1 >= row2:
+		longest = row1
+		row1Print = cell0 + cell1
+		#extending the bottom row
+		cell2 = cell2.rstrip("|")
+		cell3 = cell3.rstrip("|")
+		for i in (len(cell0) - len(cell2) - 1):
+			cell0 = cell0 + " "
+		cell0 = cell0 + "|"
+		#extend second cell here
+	else:
+		longest = row2
+		#need logic for extending top row here
 
+	border = "+"
+	for space in range(longest-2):
+		border = border + "-"
+	border = border + "+"
 
 	
-	print "+----------------------------+"
+	print border
 	print "|" + pokemon.moves[0].name + " " + str(pokemon.moves[0].remainingPP) + "/" + str(pokemon.moves[0].totalPP) + " | " + pokemon.moves[1].name + " " + str(pokemon.moves[1].remainingPP) + "/" + str(pokemon.moves[1].totalPP) + " |"
-	print "+----------------------------+"
+	print border
 	print "|" + pokemon.moves[2].name + " " + str(pokemon.moves[2].remainingPP) + "/" + str(pokemon.moves[2].totalPP) + " | " + pokemon.moves[3].name + " " + str(pokemon.moves[3].remainingPP) + "/" + str(pokemon.moves[3].totalPP) + " |"
-	print "+----------------------------+"
+	print border
