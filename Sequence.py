@@ -50,7 +50,7 @@ def myAttack(attacker, defender):
 		choice = raw_input("Which move should " + attacker.name + " use? ")
 		move = -1
 		for i in range(4):
-			# change so user doesn't have to use a leading space for this to be true
+			
 			if choice == attacker.moves[i].name:
 				move = i
 				break
@@ -93,28 +93,43 @@ def movePrint(pokemon):
 	longest = 0
 	row1Print = ""
 	row2Print = ""
+
 	if row1 >= row2:
 		longest = row1
 		row1Print = cell0 + cell1
-		#extending the bottom row
+
+		# logic for extending the bottom row
 		cell2 = cell2.rstrip("|")
 		cell3 = cell3.rstrip("|")
-		for i in (len(cell0) - len(cell2) - 1):
-			cell0 = cell0 + " "
-		cell0 = cell0 + "|"
+		for i in range(len(cell0) - len(cell2) - 1):
+			cell2 = cell2 + " "
+		cell2 = cell2 + "|"
 		#extend second cell here
+		for j in range(len(cell1) - len(cell3) - 1):
+			cell3 = cell3 + " "
+		cell3 = cell3 + "|"
+
 	else:
 		longest = row2
-		#need logic for extending top row here
+		# logic for extending top row here
+		cell0 = cell0.rstrip("|")
+		cell1 = cell1.rstrip("|")
+		for i in range(len(cell2) - len(cell0) - 1):
+			cell0 = cell0 + " "
+		cell0 = cell0 + "|"
+
+		for j in range(len(cell3) - len(cell1) - 1):
+			cell1 = cell1 + " "
+		cell1 = cell1 + "|"
 
 	border = "+"
-	for space in range(longest-2):
+	for space in range(longest - 2):
 		border = border + "-"
 	border = border + "+"
 
 	
 	print border
-	print "|" + pokemon.moves[0].name + " " + str(pokemon.moves[0].remainingPP) + "/" + str(pokemon.moves[0].totalPP) + " | " + pokemon.moves[1].name + " " + str(pokemon.moves[1].remainingPP) + "/" + str(pokemon.moves[1].totalPP) + " |"
+	print cell0 + cell1
 	print border
-	print "|" + pokemon.moves[2].name + " " + str(pokemon.moves[2].remainingPP) + "/" + str(pokemon.moves[2].totalPP) + " | " + pokemon.moves[3].name + " " + str(pokemon.moves[3].remainingPP) + "/" + str(pokemon.moves[3].totalPP) + " |"
+	print cell2 + cell3
 	print border
