@@ -1,3 +1,5 @@
+# Copyright (c) 2014 Jackson B Hammond
+
 class Pokemon(object):
 
 	def __init__(self):
