@@ -15,39 +15,39 @@ def Sequence(faster, slower):
 			myAttack(slower, faster)
 
 def attack(attacker, defender):
-	print "It's " + attacker.name + " turn."
+	print("It's " + attacker.name + " turn.")
 	attackType = random.randint(1, 100)
 	if (attackType < 25):
 		# healing
-		print attacker.name + " healed itself."
+		print(attacker.name + " healed itself.")
 		medicine = random.randint(1, 15)
 		attacker.health = attacker.health + medicine
 		if (attacker.health > 100):
 			attacker.health = 100
-		print attacker.name + " healed itself " + str(medicine) + " HP, and its health is now " + str(attacker.health)
+		print(attacker.name + " healed itself " + str(medicine) + " HP, and its health is now " + str(attacker.health))
 	elif(attackType < 75):
 		# attack
-		print attacker.name + " used a normal attack."
+		print(attacker.name + " used a normal attack.")
 		damage = random.randint(1, 15)
 		defender.health = defender.health - damage
 		if (defender.health < 0):
 			defender.health = 0
-		print attacker.name + " did " + str(damage) + " damage and " + defender.name + "'s health is now " + str(defender.health)
+		print(attacker.name + " did " + str(damage) + " damage and " + defender.name + "'s health is now " + str(defender.health))
 	else:
 		# critical hit
-		print attacker.name + " landed a critical hit!"
+		print(attacker.name + " landed a critical hit!")
 		damage = random.randint(10, 30)
 		defender.health = defender.health - damage
 		if (defender.health < 0):
 			defender.health = 0
-		print attacker.name + " did " + str(damage) + " damage and " + defender.name + "'s health is now " + str(defender.health)
-	print "\n"
+		print(attacker.name + " did " + str(damage) + " damage and " + defender.name + "'s health is now " + str(defender.health))
+	print("\n")
 
 def myAttack(attacker, defender):
-	print "It's " + attacker.name + " turn."
+	print("It's " + attacker.name + " turn.")
 	while True:
 		movePrint(attacker)
-		choice = raw_input("Which move should " + attacker.name + " use? ")
+		choice = input("Which move should " + attacker.name + " use? ")
 		move = -1
 		for i in range(4):
 			
@@ -55,12 +55,12 @@ def myAttack(attacker, defender):
 				move = i
 				break
 		if move == -1:
-			print attacker.name + " doesn't know that move!"
+			print(attacker.name + " doesn't know that move!")
 			continue
 		else:
 			break
 	attacker.moves[move].remainingPP = attacker.moves[move].remainingPP - 1
-	print attacker.name + " used " + attacker.moves[move].name + "!"
+	print(attacker.name + " used " + attacker.moves[move].name + "!")
 	attackType = random.randint(1, 100)
 	if(attackType < 75):
 		# attack
@@ -68,16 +68,16 @@ def myAttack(attacker, defender):
 		defender.health = defender.health - damage
 		if (defender.health < 0):
 			defender.health = 0
-		print attacker.name + " did " + str(damage) + " damage and " + defender.name + "'s health is now " + str(defender.health)
+		print(attacker.name + " did " + str(damage) + " damage and " + defender.name + "'s health is now " + str(defender.health))
 	else:
 		# critical hit
-		print attacker.name + " landed a critical hit!"
+		print(attacker.name + " landed a critical hit!")
 		damage = random.randint(10, 30)
 		defender.health = defender.health - damage
 		if (defender.health < 0):
 			defender.health = 0
-		print attacker.name + " did " + str(damage) + " damage and " + defender.name + "'s health is now " + str(defender.health)
-	print "\n"
+		print(attacker.name + " did " + str(damage) + " damage and " + defender.name + "'s health is now " + str(defender.health))
+	print("\n")
 
 
 
@@ -128,8 +128,8 @@ def movePrint(pokemon):
 	border = border + "+"
 
 	
-	print border
-	print cell0 + cell1
-	print border
-	print cell2 + cell3
-	print border
+	print(border)
+	print(cell0 + cell1)
+	print(border)
+	print(cell2 + cell3)
+	print(border)

@@ -45,22 +45,22 @@ blue = pokemonBuilder(data)
 moveBuilder(blue, data)
 
 # Start of the Battle
-print "\n"
-print "Enemy " + blue.name + " attacked!\n"
-print "Go, " + red.name + "!\n"
+print("\n")
+print("Enemy " + blue.name + " attacked!\n")
+print("Go, " + red.name + "!\n")
 
 if(red.speed > blue.speed):
-	print red.name + " is faster than " + blue.name + "!\n"
+	print(red.name + " is faster than " + blue.name + "!\n")
 	while (red.health > 0 and blue.health > 0):
 		Sequence.Sequence(red, blue)
 
 elif(red.speed < blue.speed):
-	print blue.name + " is faster than " + red.name + "!\n"
+	print(blue.name + " is faster than " + red.name + "!\n")
 	while (red.health > 0 and blue.health > 0):
 		Sequence.Sequence(blue, red)
 
 else:
-	print "Their speeds are exactly the same!\n"
+	print("Their speeds are exactly the same!\n")
 	coin = random.randint(1,10)
 	if (coin < 6):
 		while (red.health > 0 and blue.health > 0):
@@ -70,9 +70,9 @@ else:
 			Sequence.Sequence(blue, red)
 
 if (red.health <= 0):
-	print red.name + " fainted, " + blue.name + " wins!"
+	print(red.name + " fainted, " + blue.name + " wins!")
 else:
-	print blue.name + " fainted, " + red.name + " wins!"
+	print(blue.name + " fainted, " + red.name + " wins!")
 
 
 data.close()
