@@ -3,9 +3,6 @@
 import Creature
 import Sequence
 
-###################################################
-## This a comment for learning how commits work! ##
-###################################################
 def pokemonBuilder(source):
 	pokemon = Creature.Pokemon()
 	
